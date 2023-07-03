@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+    <head>
+       
+        <link rel="shortcut icon" href="resimler/favicon.ico" type="image/x-icon">
+        <title>CMD VE NODE.JS</title>
+        <meta name="description" content="cmd nasıl çalışır. nodejs e cmd den bağlanıp nasıl çalışılır?, node.js içinden nasıl çaışılır? ">
+        <meta name="keywords" content="cmd, node.js, çalışma, ">
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="00 - css.css">
+    </head>
+    <script src="7-Dom-DokumanNesneModeli.js"></script>
+ <body>
+    Document Object Model (DOM) Nedir?<br><br>
+W3C(World Wide Web Consortium)'e göre Document Object Model; <br> 
+Programların ve komut dosyalarının bir belgenin içeriğine, yapısına ve stiline dinamik olarak erişmesine ve güncellemesine izin veren bir platform ve dilden bağımsız bir arayüzdür.
+<br><br>
+Bir HTML belgesini iç içe geçmiş kutular olarak hayal edebilirsiniz.  <br> 
+< body > ve < / body > gibi çevreleyen etiketler, sırayla başka etiketler veya metinler içeren diğer etiketleri kapsar.
+<br><br>
+Tarayıcının belgeyi temsil etmek için kullandığı veri yapısı bu şekli izler.  <br> 
+Her kutu için, hangi HTML etiketini temsil ettiği ve hangi kutuları ve metni içerdiği gibi şeyleri bulmak için etkileşime girebileceğimiz bir nesne vardır. <br> 
+ Bu temsil, Document Object Model veya kısaca DOM olarak adlandırılır.
+<br><br>
+DOM’da HTML ile hazırladığınız sayfa, document; bu document'in içine yerleştirdiğiniz her türlü öğe ise element olarak adlandırılır.  <br> 
+DOM'da nesnelerin birer element olarak kullanılabilmesi için hiyerarşik bir düzen izlenerek çağrılmaları gerekir.  <br> 
+HTML’deki her bir elamanın birbiri ile hiyerarşik bir yapı oluşturması ile oluşur. DOM bir ağaç dizini gibi bütün dokümanları birbirine bağlar.
+<br><br>
+DOM Tree
+<br><br>
+<br><br>
+< ! doctype html > <br> 
+< html > <br> 
+< head > <br> 
+< title >My home page< / title > <br> 
+< / head > <br> 
+< body > <br> 
+< h1 >My home page< / h1 > <br> 
+< p >Hello, I am Baran and this is my home page.< / p> <br> 
+< p> Click to review my resume <br> 
+< a href="http://balin.me/cv.pdf"> balin.me < / a>.< /p >  <br> 
+< / body > <br> 
+< / html > <br> 
+<br><br>
+Bu sayfa aşağıdaki yapıya sahiptir:
+<br><br>
+HTML boxes
+<br><br>
+HTML ağacı olarak:
+<br><br>
+HTML document as a tree
+<br><br>
+Dosya oluşturmak, elementleri ve içeriklerini silme/ekleme gibi fonsiyonları vardır.
+<br><br>
+Örneğin;
+<br>  <!--
+< html > <br> 
+    < head> <br> 
+        < titte>Form< / titte> <br> 
+        < script type= "text/javascript"> /*document.formAdi.isim.value = 'Baran Balin'; <br> 
+        document.getElementbyId('yas').value = '25';  < / script ><br> 
+    < / head> <br>
+    < body> <br> 
+        < form name="formAdi" method="post" action=""> <br> 
+            < input type="text" name="isim"> <br> 
+            < input type="text" id="yas"> <br> 
+        < / form> <br> 
+    < / body> <br> 
+< / html> <br> 
+-->
+<br>
+HTML içerisine yerleştirilmiş öğeleri çağırmak için, içinde bulunduğu diğer öğelerin çağrılması bir yöntem iken, bir öğeye bir id vererek bu id üzerinden çağırmak da bir başka yöntemdir.
+<br><br>
+JavaScript kodumuzun ilk satırında metin kutusunun değeri hiyerarşik olarak çağrılmış ve değiştirilmiştir. <br> 
+İkinci satırda ise hiyerarşik yapı daha az önemsenerek JavaScript içindeki DOM’un temellerinden olan getElementById metodu kullanılmıştır.
+<br><br>
+Sonuç olarak eğer client-side olarak HTML’e daha fazla hükmetmek istiyorsanız, kullandığınız dil ne olursa olsun kesinlikle DOM un erişim yöntemlerini çok iyi biliyor olmanız gerekir.
+<br><br>
+Aşağıda codepen'i kullanarak senden istediğimiz alıştırmaları yapmanı bekliyoruz!
+<br><br>
+Sana verdiğimiz içerikte butona tıklanınca yeni bir sayfa açılacak ve içerisinde "Hello World!" yazacak.  <br> 
+Üzerinden değişiklikler yaparak nasıl çalıştığını anlamaya çalış!
+Aşağıdaki codepen içerisinde id="domain" olan boş bir paragraf oluştur.  <br> 
+Ardından butona tıkladığımızda paragrafın içerisine istediğin bir metni yazdır.  <br> 
+Aşağıdaki kod parçası sana yardımcı olacak!
+<br> <br> 
+document.getElementById("domain").innerHTML = "DOM Manipülasyonu yaptık!";<br> 
+Yukarıdaki kod ile id'si domainolan bir eleman içerisinde innerHTML metodunu kullanarak istediğimiz değişikliği yapabiliyoruz.
+<br><br>
+3.Codepen içerisinde dene! <br> 
+Butona tıkladığımız zaman bir alert ile mesaj verelim. <br> <br> 
+
+Bunun için HTML tarafında <br> 
+< input type="button" id="btnClick" value="Tıkla!!" /> <br> 
+id'si btnClick olan bir buton oluşturalım. Bu sefer buton oluşturmayı daha farklı yaptık!
+<br><br>
+Senden istediğimiz JavaScript tarafına yazacağın kodlarla butona tıklandığında alert vermen ihtiyacın olanlar ise aşağıda.
+<br><br>
+document.getElementById("btnClick").addEventListener("click", clicked);<br> 
+function clicked(){<br> 
+       alert("Butona Tıklandı");<br> 
+       } <br> 
+       <br> <br> 
+Yukarıda btnClick 'i getElementById ile seçtik.<br> 
+Ardından addEventListenermetodu ile izlemeye başladık.<br> 
+Burada: <br> <br> 
+
+.addEventListener("click", clicked); <br> 
+tıklama gerçekleştiğinde aşağıda tanımladığımız <br> 
+clicked() <br> 
+isimli fonksiyonu çalıştırıyoruz. Bu fonksiyon içerisinde başka şeyler de yapabiliriz!
+<br><br>
+Denemekten çekinme!
+
+<br><br>
+
+Kaynaklar
+https://eloquentjavascript.net/14_dom.html<br> 
+https://www.guru99.com/how-to-use-dom-and-events-in-javascript.html<br> 
+https://dom.spec.whatwg.org/#DOMTS<br> 
+https://www.w3schools.com/js/js_htmldom.asp<br> 
+ </body>
+</html>

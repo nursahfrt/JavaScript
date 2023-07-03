@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+    <head>
+        <link rel="shortcut icon" href="resimler/favicon.ico" type="image/x-icon">
+        <title>CMD VE NODE.JS</title>
+        <meta name="description" content="cmd nasıl çalışır. nodejs e cmd den bağlanıp nasıl çalışılır?, node.js içinden nasıl çaışılır? ">
+        <meta name="keywords" content="cmd, node.js, çalışma, ">
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="00 - css.css">
+    </head>
+    <script src="3-TemelIslemler.js"></script>
+
+    
+Number Veri Türü Kullanımı <br>
+Temel Aritmetik İşlemler ve İşlem Önceliği ve Arttırma ve Azaltma İşlemleri <br>
+<br><br>
+Number (Sayı) Veri Türü <br>
+JavaScript dili weakly-typed yani güçsüz türlü bir dildir. Değişkenlerin ve parametrelerin türlerini bildirmek gerekmez. <br>Tür kullanımdan dolaylı olarak çıkartılır. <br>
+<br>
+Örneğin;
+<br>
+var x = 3; <br>
+Şeklinde bir kullanımda x değişkenin değeri bir tam sayıdır (integer), aşağıdaki örnekte ise;<br>
+<br><br>
+    var x = 3.2;
+x değişkenin değer türü kayan sayı (float) türündedir. Sayının integer veya float olup olmadığı nokta (.) olup olmamasından anlaşılır.
+<br><br>
+Aritmetik Operatörler<br>
+<br>
+Toplama: +<br>
+Çıkarma: -<br>
+Çarpma: *<br>
+Üs Alma: **<br>
+Bölme: /<br>
+Mod Alma: %<br>
+Arttırma: ++<br>
+Eksiltme: --<br>
+<br><br>
+Toplama: Sayıları toplama işlemini gerçekleştirir. İşlem yönü soldan sağadır.<br>
+<br><br>
+    var result = 3+5;<br>
+    console.log(result);<br>
+    //8 <br>
+    <br><br>
+Çıkarma: İki sayıyı çıkarma işlemini gerçekleştirir. İşlem yönü soldan sağadır.<br>
+<br><br>
+    var result = 5-2;<br>
+    console.log(result);<br>
+    //3<br>
+    <br><br>
+Çarpma: İki sayıyı çarpma işlemini gerçekleştirir. İşlem yönü soldan sağadır.<br>
+<br><br>
+    var result = 5*2;<br>
+    console.log(result);<br>
+    //10<br>
+    <br><br>
+Üs Alma: ECMAScript6 ile gelmiştir. Soldaki değerin, sağdaki rakam veya sayı baz alınarak kendisiyle çarpılması şeklinde gerçekleşir.<br>
+<br><br>
+    var result = 5**2;<br>
+    console.log(result);<br>
+    //25 <br>
+    <br><br>
+Bölme: İki sayıyı bölme işlemini gerçekleştirir. İşlem yönü soldan sağadır.<br>
+<br><br>
+    var result = 6/3;<br>
+    console.log(result);<br>
+    //2<br>
+Mod Alma: Operatörün solundaki değerin sağdakine kalanını bulmak için kullanılmaktadır. İşlem yönü soldan sağadır.<br>
+<br><br>
+    var result = 6%3;<br>
+    console.log(result);<br>
+    //0<br>
+    <br><br>
+Arttırma: Bir sayıyı arttırmak için kullanırız. <br>
+Değeri 1 arttırır. <br>
+For ve While döngüleri içinde sık sık kullanılır, önce veya sonra kullanılabilir. <br>
+Operatörün değişkenden sonra gelmesi durumuna postfix form, değişkenden önce gelme durumuna prefix form denilmektedir. <br>
+Her iki kullanımda da değer +1 arttırılır lakin prefix formu oluşan yeni değeri döndürmektedir. <br>
+Postfix formu ise eski değeri döndürür, yani ekrana alert keyword (anahtar kelimesi) ile basar, ekrana basılan değer eski değerdir. <br>
+Arttırma işlemi yapılmıştır ve değişkende arttırılmış hali tutulur.<br>
+<br><br>
+Örneğin;
+<br><br>
+let counter = 1;<br>
+   let a = ++counter;<br>
+   alert(a); // 2<br>
+   <br><br>
+   let counter = 1;<br>
+   let a = counter++; <br>
+   alert(a); // 1console.log(counter); // 2 değerini verir.<br>
+   <br><br>
+Azaltma: Bir sayıyı azaltmak için kullanırız. <br>
+Değeri 1 azaltır. <br>
+For ve While döngüleri içinde sık sık kullanılır. <br>
+Arttırma operatöründe anlatılan başa veya sonraya operatör ekleme işlemi sonunda gerçekleşen durum azaltma operatörü içinde geçerlidir.<br>
+<br><br>
+    let counter = 1;<br>
+    let a = --counter;<br>
+    alert(a); // 0<br>
+    <br><br>
+İşlem Önceliği Temel dört işlem kuralları, JavaScript için de geçerlidir.
+
+
+
+
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+    <head>
+      
+        <link rel="shortcut icon" href="resimler/favicon.ico" type="image/x-icon">
+        <title>CMD VE NODE.JS</title>
+        <meta name="description" content="cmd nasıl çalışır. nodejs e cmd den bağlanıp nasıl çalışılır?, node.js içinden nasıl çaışılır? ">
+        <meta name="keywords" content="cmd, node.js, çalışma, ">
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+
+    <script src="2-Let,Const,Var.js"></script>
+
+    <h1>Değişken Tanımlama Yöntemleri</h1> 
+    <ol>
+        <li>var</li>
+        <li>let (ES6 ile Birlikte Geldi)</li>
+        <li>const (ES6 ile Birlikte Geldi)</li>
+    </ol>
+    <h2>Değişkenlerin Adlandırılması</h2>
+
+    <p>Camel Case : 
+        Her kelimenin ilk harfi büyük yazılır, kelimeler arasında boşluk veya sembol yoktur. Örnekler: UserAccount, FedEx, WordPerfect. Programlamada yaygın olan bir varyasyon, küçük harfle başlamaktır: iPad, eBay, fileName, userAccount.Microsoft, kesinlikle bu varyasyona atıfta bulunmak için Camel Case terimini kullanır. <br><br>
+
+    Pascal Case : 
+        Pascal programlama dili tarafından popüler hale getirilen bu, kelimenin büyük harfle başladığı Camel Case'in bir alt kümesidir. Böylece, UserAccountPascal Durumundadır ancak userAccount. <br><br>
+
+    Yılan Örneği : 
+        Cümleler veya bileşik sözcükler içindeki sözcükler alt çizgi ile ayrılır. Örnekler: first_name, error_message, account_balance. <br><br>
+
+    Kebap Kasası :
+        Yılan Kasası gibi, ancak bunun yerine tire kullanıyor. Örnekler: first-name, main-section. <br><br>
+
+    Screaming Case :
+    Bu, büyük harfli adları ifade eder.Örnekler: TAXRATE, TAX_RATE. <br><br>
+    
+    Macarca Gösterim : 
+    İsimler, niyeti belirtmek için küçük bir önekle başlar. Adın geri kalanı Pascal Case'de. İki çeşidi vardır: (a) Ön ekin veri türünü belirttiği Macarca Sistemler ; (b) Ön ekin mantıksal amacı belirttiği Macarca uygulamalar . Örnekler: strFirstName, arrUserNamesSistemler için; rwPosition, pchNameUygulamalar için. <br><br>
+    </p>
+
+        <h2>Değişkene Değer Atama ve Veri Türleri</h2>
+
+        <p>Değişkenlere değer atama = operatörü ile yapılır. <br>
+<br>
+            let integer; <br>
+            integer = 12 <br>
+
+            ya da --> let double = 12,5 <br>
+
+            ya da --> let string = "Merhaba" <br>
+
+            ya da --> let boolean = boolean <br>
+
+            ya da --> let int=5, double=0.5, string="Merhaba", <br>
+            <br>
+            Değişkenler değer atanmadığı takdirde <strong>undefined </strong>değerini alırlar. <br>
+            <br>
+            Yukarıdaki kod parçasında olduğu gibi tek bir satırda, deklarasyonları aynı fakat farklı tanımlayıcılar ile tanımlamış değişkenler tek bir satırda tanımlanabilir ve değer atanabilir. <br>
+            <br>
+            JavaScript <strong>loosely typed </strong>bir programlama dilidir. Yani bir değişkeni tanımlarken <strong>değişkenin türünü (sayısal, metinsel, boolean) belirtmemize gerek yoktur.</strong> <br>
+            <br>
+            Yazdığımız zaman 12 değerinin sayısal bir değer olduğunu anlar. Bir değişkene aşağıdaki veri tiplerini atayabiliriz. <br>
+            <ol>
+                <li>Boolean = Mantıksal ifadedir. true veya false değeri atanabilir.</li>
+                <li>Number = Sayısal ifadedir. 2^53 -1 değerine kadar sayısal değerler atanabilir.</li>
+                <li>BigInt = 2^53-1 değerinden büyük değerleri atayabilir.</li>
+                <li>String = Metinsel ifadelerdir. Metinsel ifade tanımlanırken ifade “ ” veya ‘ ’ işaretleri arasına yazılır.</li>
+                <li>Object = Yukarıda ki 7 veri türü de <strong>primitive</strong> tiplidir.</li>
+            </ol>
+             Objelerde ( nesne, dizi ) gibi referans tipler de değişkenlere atanabilir.</p>
+
+
+        <h2>Scope (Kapsam) Nedir? Türleri Nelerdir ?</h2>
+
+
+        <p>Scope, ilgili değişkenlere ulaşabildiğimiz alanı temsil eder.
+            <br><br>
+             Global Scope ve Local Scope (Block Scope ve Function Scope) olmak üzere türleri vardır.
+            <br><br>
+            Global Scope: <br>
+            <strong>Fonksiyonların ya da for, if veya while gibi blokların dışında</strong> tanımlanan değişkenlerin sahip olduğu Scope türüdür. Bu değişkenlere her yerden ulaşılabilir.
+            <br><br>
+            Local Scope: <br>
+            <strong>Fonksiyonların ya da for, if veya while gibi blokların içerisinde</strong> tanımlanmış ve sadece tanımlandığı alan içerisinden ulaşılabilen değişkenlerin sahip olduğu scope türüdür. </p>
+        <h3>let</h3>
+        <p>Değişkenleri block scope'ta tanımlayan deklarasyondur. <br>
+            Değişken değerleri değiştirilebilir. <br>
+            let a = 7 <br>
+            a = "Merhaba" <br>
+            Aynı isimle tekrardan aynı blokta tanımlanamaz. <br>
+            Farklı block'larda aynı isimle tanımlanabilir. </p>
+            
+        <h3>const</h3>
+        <p>Değişkenleri block scope'ta tanımlayan deklarasyondur. Değeri sonradan değiştirilemez. Değişkenleri deklare etmek için kullanılan keyword'dür. <br><br>
+            const pi = 3.14
+            pi ="3.14"
+        Const ile tanımlanan objelerin özellikleri (properties) değiştirilebilir fakat objenin kendisi değiştirilemez. <br><br>
+
+        Diziler içinde aynısı geçerlidir. Dizi değerleri değiştirilebilir fakat dizinin kendisi değiştirilemez.</p>
+        
+        <h3>var</h3>
+        <p>Aynı isimle tekrardan tanımlanabilirler. <br>
+            var a = 7 <br>
+            var a = 5 <br>
+            var ile tanımlanan değişkenler global scope veya function scope'tur.<br>
+            globalde tanımladığımız degiskene her yerden erişebiliriz. </p>
+
+    <h2>Hoisting Kullanımı</h2>
+    <h3>var</h3>
+    <p>Javascript'te bir değişken kullanıldıktan sonra tanımlanabilir. Bu kullanımda hatayla karşılamşayız. <br> <br>
+
+    Çalışma mantığı şudur. Bir değişkeni ekrana yazdırdık ama o değişken ekrana yazdırdığımız yerin üstünde değil altında. <br>
+    Javascript bu durumda tüm sayfayı inceler ve eğer değişkeni bulursa değerini ekrana yazdırır. <br>
+    Bunu örnekle daha iyi anlayacaksınız. Aşağıya 2 farklı kod yazacağım ve ikisininde sonucu aynı olacak. <br><br>
+       <!-- 
+        Örnek 1: <br>
+        
+        <script>
+        x = 5;   // x'e 5 değerini atadık
+        console.log(x) // x değerini konsola yazdırdık
+        var x;  // x değişkenini tanımladık
+        </script>
+
+        Örnek 2: <br>
+        
+        <script>
+        var x; // x değişken tanımlandı
+        x = 5; // 5 değeri atandı
+        console.log(x); //x değeri ekrana yazıldı
+        </script> 
+<br>-->
+        Yukardaki örnek 1 ve örnek ikiyi detaylı incelediğimiz zaman görüyoruz ki değişkenin tanımlandığı yerin kullanmadan önce veya sonraki satırlar olmasının hiçbir önemi yok. <br><br>
+        
+        Ancak kod bütünlüğü ve okunabilirlik açısından global değişkenleri kod bloğunun en tepesinde tanımlamak en doğru karar olacaktır. Diğer türlü uzun kodlarda karmaşıklığa sebebiyet verebiliriz.</p>
+
+    <h3> let ve const </h3>
+
+        <p>Let ve const anahtar kelimeleriyle hoisting yapmaya çalışırsak javascript aynen şu resimdeki hatayı veriyor. <br>
+        Bu yöntemi bunlarda kullanamazsın. <br><br>
+
+        Eğer önce değişkene değer verip sonra let veya const ile o değişkeni tanımlarsak Javascript "Reference Error" hatası verecektir. <br>
+        Yani ecmascript abimiz bu konuda biraz katı davranıyor. <br>
+        <!--
+        <script>
+          isim = "Zafer";
+          let isim;
+          console.log(isim);
+        // kod çalıştığında  Reference error hatası verecektir.
+        </script>
+        -->
+        Hoisting kavramı kafa karıştırıcı olsa da bilinmediği zaman çeşitli hatalara yol açabiliyor. <br>
+        Ve maalesef birçok yazılımcı tarafından bilinmiyor.</p>
+
+
+
+
+
+</html>

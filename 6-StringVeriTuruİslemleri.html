@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+    <head>
+        <link rel="shortcut icon" href="resimler/favicon.ico" type="image/x-icon">
+        <title>CMD VE NODE.JS</title>
+        <meta name="description" content="cmd nasıl çalışır. nodejs e cmd den bağlanıp nasıl çalışılır?, node.js içinden nasıl çaışılır? ">
+        <meta name="keywords" content="cmd, node.js, çalışma, ">
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="00 - css.css">
+    </head>
+    <script src="6-StringVeriTuruİslemleri.js" ></script>
+    <body>
+        String Veri Türü İşlemleri <br><br>
+String nedir?<br><br>
+JavaScript metinlerin tümü "string" veri tipi içinde tutulur ve "string" veri türü ile ilgili yapabileceğimiz birden fazla işlem vardır. Bu yazımızda bunlardan bahsedeceğiz.
+<br><br>
+Length Özelliği - Uzunluk Değerini Alma <br>
+String veri tipinde bulunan bir ifadenin ne kadar uzun olduğunu bulmak için Length özelliğimizi kullanırız.
+<br><br>
+code
+<br><br>
+cikti
+<br><br>
+indexOf - Metin İçinde Arama Yapma <br>
+Metnin içinde aramak istediğimiz değerin index numarasını bize verir.
+<br><br>
+code
+<br><br>
+cikti
+<br><br>
+lastIndexO f- Metin İçinde Arama Yapma <br>
+indexOf ile arasındaki tek fark aranan kelime birden fazla geçiyor ise en son eşleşmeden gelen index numarasını döndürür.
+
+code
+<br><br>
+cikti
+<br><br>
+Search - Metin İçinde Arama Yapma <br>
+indexOf ile aynı sonuçlara ulaşırız genel olarak "Regular Expressions" işlemleri için çok kullanılan bir metottur.
+<br><br>
+code
+<br><br>
+cikti
+<br><br>
+Slice - Metninden Parça Almak <br>
+Metin içinden almak istediğimiz yerlerin index numaralarını vererek metin içinde bulunan parçayı alabiliriz.
+<br><br>
+code
+<br><br>
+Bitiş index numarasındaki karakter sonuca dahil edilmez.
+<br><br>
+cikti
+<br><br>
+Not: Tek index yazmak ise yazılan index numarasından sonra gelen tüm karakterleri almasına neden olur.
+<br><br>
+code
+<br><br>
+cikti
+<br><br>
+Replace – Metin Bulma ve Değiştirme <br>
+Aranan metni istediğimiz metin ile değiştirmemize olanak sağlar.
+<br><br>
+code
+<br><br>
+cikti
+<br><br>
+toUpperCase ve toLowerCase
+<br><br>
+code
+<br><br>
+toUpperCase metin içinde bulunan tüm karakterleri büyük harf yapmamıza olanak sağlar.
+<br><br>
+toLowerCase metin içinde bulunan tüm karakterleri küçük harf yapmamıza olanak sağlar.
+<br><br>
+cikti
+<br><br>
+Concat - Metin Birleştirme <br>
+Elimizde bulunan iki string türündeki veriyi birleştirmemize olanak sağlar.
+<br><br>
+code
+<br><br>
+cikti
+<br><br>
+charAt- İndex Numarasına Göre Karakter Bulmak <br>
+Belirtilen index numarasında yer alan karakteri verir.
+<br><br>
+code
+<br><br>
+cikti
+<br><br>
+charCodeAt – İndex Numarasına Göre Karakterin Unicode Değerini Bulma <br>
+Belirtilen index numarasında yer alan karakterin Unicode değerini verir.
+<br><br>
+code
+<br><br>
+cikti
+<br><br>
+Split – Metni Diziye Çevirme <br>
+Split metodu ile istenilen metin diziye çevrilebilir. Kullanılan parametre ile metnin nasıl parçalanacağı belirtilir.
+<br><br>
+code
+<br><br>
+cikti
+<br><br>
+Bir String ifadesi içerisinde yer alan bilgilerin istediğimiz gibi olup olmadığını kontrol etmek isteyebiliriz.  <br>
+İçerisinde mail adresi geçiyor mu? Kullanıcın verilerinde benim aradığım bilgi var mı?  <br>
+Gibi kontroller yapmak istiyor olabiliriz.  <br>
+String veri türü işlemleri bize bu noktada yardımcı olur.
+<br><br>
+Örnekler üzerinden görelim:
+<br><br>
+let email = "kodluyoruz@kodluyoruz.org" <br>
+let firstName = "JavaScript" <br>
+let lastName = "BOOTCAMP" <br>
+Bu değişkenleri yazı boyunca kullanacağız. <br>
+<br><br>
+Karakter Sayısı <br>
+String bir ifadenin karakter sayısını (uzunluğunu) bulmak istiyorsak length özelliğini kullanırız. <br>
+<br><br>
+console.log(email.length);  //25 <br>
+console.log(firstName.length); //10 <br>
+Karakter Yeri (Index) <br>
+String bir ifadenin içerisinde, aradığımız karakterin yerini bulmak için 2 yöntem vardır.  <br>
+[ ] ve chartAt() metodu bize bu konuda yardımcı olur. <br>
+<br><br>
+console.log(firstName.[0]); //"J" <br>
+console.log(firstName.charAt(2)); //"v" <br>
+Büyük/Küçük Harfe Çevirme <br>
+String bir ifadeyi tamamen büyük veya küçük harf yapmak istiyorsak.  <br>
+Büyük harf için toUpperCase(), küçük harf için ise toLowerCase() metotlarını kullanırız.
+<br><br>
+firstName = firstName.toUpperCase(); <br>
+console.log(firstName); //"JAVASCRIPT" <br>
+<br><br>
+lastName = lastName.toLowerCase(); <br>
+console.log(lastName); //"bootcamp" <br>
+İlk Harfi Büyük Kalan Harfleri Küçük Yapma <br>
+En başta değişkenlerimizi tanımlardan lastName değişkenimizi "BOOTCAMP" olarak sadece büyük harf ile yazdık.  <br>
+Bu ifademizi "Bootcamp" değiştirmek isteyebiliriz.  <br>
+Ya da sadece küçük harfler ile yazılmış bir özel ismin ilk harfini, büyük harf yapmak istiyor olabiliriz.
+<br><br>
+Bu tür durumları şu şekilde sağlarız.
+<br><br>
+lastName = `${lastName[0].toUpperCase()}${lastName.slice(1).toLowerCase()}` //Bootcamp <br>
+İstediğimiz Bilgiyi Aramak <br>
+String bir ifade içerisinde, istediğimiz bir bilginin yerini bulmak için search() metodunu kullanırız.  <br>
+Kontrol ettiğimiz ifade nereden başlıyor ise bize onun yerini verir.
+<br><br>
+console.log(email.search("@")); //10 <br>
+Eğer arattığımız şey yok ise -1 sonucu verir.
+<br><br>
+console.log(email.search("olmayan")); //-1 <br>
+search() yerine kullanabileceğimiz başka bir metot ise indexOf() metodudur.
+<br><br>
+console.log(email.indexOf(".")); //21 <br>
+
+Belli Bir Bilgiyi Almak <br> <br>
+Biraz önce search() metoduyla @ işaretinin nerede olduğunu almıştık.  <br>
+İşte bu noktada @ işaretinden sonra gelen domain bilgisini almak bizim için çok kolay bir hale geldi, slice() metoduyla bu işlemi gerçekleştirebiliriz.
+<br><br>
+console.log(email.slice(10+1)); //"@kodluyoruz.org" <br>
+//@ ifadesini almak istemediğimiz için +1 kullandık. <br>
+Başka bir kullanımı ise şu şekildedir. 
+<br><br>
+console.log(firstName.slice(1,4)); //"ava" <br>
+Yukarıdaki ifadede 1'inci index'ten başla ve 4. index'e kadar olan yeri al dedik.  <br>
+Bu noktada şunu anlamak önemli,  <br>
+1. index'ten başlayıp 4. index'e kadar gittiğimiz için sadece 3 karakter aldı.
+<br><br>
+email değişkeninde sadece domaini almak istesek bunu iki farklı yöntemle yapabiliriz.
+<br><br>
+let domain = email.slice(email.search("@")+1);  <br>
+console.log(domain); //"kodluyoruz.org" <br>
+<br><br>
+let domain = email.slice(email.indexOf("@")+1);  <br>
+console.log(domain); //"kodluyoruz.org" <br> <br>
+
+Bilgiyi Değiştirmek <br>
+email değişkeninde domaini değiştirmek istersek eğer, replace() metodu bize yardımcı olur. 
+<br><br>
+email = email.replace("kodluyoruz.org", "gmail.com"); <br>
+console.log(email); //"kodluyoruz@gmail.com" 
+<br><br>
+İstediğim Bilgi Var Mı? <br>
+Aradığımız bilginin değişken içerisinde olup olmadığını kontrol etmek için includes() metodunu kullanırız.  <br>
+true veya false döner.
+<br><br>
+email.includes("@"); //true <br>
+email.includes("$"); //false <br>
+<br><br>
+Nasıl Başladı Nasıl Bitti? <br>
+Aldığımız veri istediğimiz bilgiyle başladı mı? <br>
+Veya istediğimiz bilgiyle bitti mi? 
+Bu durumu kontrol etmek için startsWith() ve endsWith() metodunu kullanırız.
+<br><br>
+email.startsWith("@"); //false <br>
+email.endsWith("org"); //true <br>
+<br><br>
+Sorular
+let url = "www.kodluyoruz.org"; <br>
+let language = "Java"; <br>
+Soru 1: Yukarıdaki language değişkenin değerini JavaScript olarak değiştirin ve konsola yazdırın.
+<br><br>
+Çözüm Soru 1
+<br><br>
+Soru 2: Yukarıdaki url değişkenini kullanarak "www" olmadan domain (kodluyoruz.org) adında yeni bir değişken oluşturun ve konsola yazdırın.
+<br><br>
+Çözüm Soru 2
+
+
+    </body>
+
+</html>

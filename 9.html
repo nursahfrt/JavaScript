@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HTML ELEMANLARI BULMA</h1>
+    <ol start="1.">
+        <li>HTML öğelerini kimlik numarasıyla bulma</li>
+        <li> HTML öğelerini etiket adına göre bulma</li>
+        <li> HTML öğelerini sınıf adına göre bulma</li>
+        <li>  CSS seçicileriyle HTML öğelerini bulma</li> 
+        <li>HTML öğelerini HTML nesne koleksiyonlarıyla bulma</li>    
+    </ol>
+    <h2 id="kimlik">1. Id ile HTML Elemanı Bulma</h2>
+    <p> JS dosyasına alttaki kodu yazarak bu sayfadan id = "test olanları çağırabilirsin.</p>
+    <p> document.getElementById("test");</p> // dükümanda id si test olan değeri buraya yaz demek
+
+    <h2 id="tag" class="sınıf1">2.Etiket(tag) Adına Göre HTML Elements Bulma</h2>
+    <p> JS dosyasına alttaki kodu yazarak bu sayfadan tag ı p olanların hepsini çağırabilirsin.</p>
+    <p> document.getElementsByTagName("p");</p> // dükümanda etiketi p olan değeri buraya yaz demek
+
+    <h2 class="sınıf2">3.HTML Öğelerini Sınıf Adına göre Bulma</h2>
+    <p> JS dosyasına alttaki kodu yazarak bu sayfadan class ı = "sınıf" olanların hepsini çağırabilirsin.</p>
+    <p> document.getElementsByClassName("sınıf");</p> // dükümanda class i sınıf olan değeri buraya yaz demek
+
+  
+    <h2 >4.HTML DOM querySelector () Yöntemi</h2>
+    <p class="cssSecim"> querySelector() yöntemi, belgede belirtilen bir CSS seçiciyle eşleşen ilk öğeyi döndürür. <br>
+        Not: querySelector() yöntemi yalnızca belirtilen seçicilerle eşleşen ilk öğeyi döndürür. </p>
+    <p>Tüm eşleşenleri geri getirmek için bunun yerine querySelectorAll() yöntemini kullanın..</p>
+    <p> document.querySelector(CSS selectors)</p>
+    <p>querySelector ()  nesne kolaksiyonlarına agöre daha hızlıdır.</p>
+
+    <h2 >5.HTML Elemanlarını HTML Nesne Koleksiyonlarıyla Bulma</h2>
+    <ol>
+        <li>document.anchors</li> //
+        <li>document.body</li> //body tagının içine 
+        <li> document.documentElement</li>
+        <li>document.embeds</li>
+        <li> document.forms</li> //tüm formlara
+        <li>document.head</li> //head tagının  içine
+        <li> document.images</li> 77tüm resimlere
+        <li>document.links</li> // tüm linklere
+        <li>document.scripts</li>
+        <li>document.title</li> //sayfa başlığına
+    </ol>
+
+    
+</body>
+</html>

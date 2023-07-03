@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<head>
+    <title>Elemente Sınıf ekleme</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+</head>
+<body>
+<h1>javascript İle Elemente Class Ekleme</h1>
+<br><br>
+Html sayfaları üzerinde işlem yaparken, elemetlerin ( tag, etiket ) sınıflarını değiştirmek isteyebiliriz.<br>
+Bunun nedeni yapılan işlem sonrasındaki farklı durumun belirginleşmesi olabilir. <br>
+Mesela bir cevap girilirken gri, girildikten sonra eğer doğru ise yeşil ve eğer yanlış ise kırmızı renkte bir font kullanmak isteyebiliriz.
+<br><br>
+Bu gibi durumlarda Javascript ile elemente class ekleyerek elementin görünümüne müdehale edebiliriz. <br>
+Css sınıfları etikenlerin sitil bilgilerini tutarlar ve bir elemente istediğimiz kadar sitil sınıfı ekleyebilir veya çıkartabiliriz. <br>
+Buradaki istediğimiz kadar tabii ki sonsuz anlamında değil 🙂 .
+<br><br>
+Javascript DOM üzerindeki bir elemente ulaştığında o elementin sitil sınıflarını classList özelliğinde tutar. <br>
+Bu özelliğin metodlarını kullanarak elemente yeni Css sınıfları ekleyebilir veya çıkarabiliriz. 
+<br><br>
+Şimdi bir örnek verelim.<br>
+
+<code>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .yesil {
+        color: green;
+      }
+      .kirmizi {
+        color: red;
+      }
+    </style>
+    <script>
+      const sinifEkle = () => {
+        const baslikDOM = document.getElementById("baslik");
+        baslikDOM.classList.add("yesil");
+      };
+    </script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="baslik">Bir başlık</h1>
+    <button onClick="sinifEkle()">Rengi Değiştir</button>
+  </body>
+</html>
+
+</code>
+
+Yukarıdaki örneğimizi çalıştırdığımızda, Rengi Değiştir düğmesine tıklayarak yazı rengini yeşil yapabiliriz. <br>
+Tek seferlik bir işlem olsa da işin mantığını anlatmaktadır.
+<br> <br>
+<h2>Javascript classList.add İle Elemente Yeni Sınıf Ekleme</h2>
+<br> <br>
+classList bir elementin sitil sınıflarını tutan bir nesnedir ve bu nesnenin add metodu ile elemente yeni sınıflar eklenebilir. <br>
+add metodu parametre olarak eklenecek sitil sınıfının adını alır. <br>
+Kaç adet css sınıfı eklenecek ise hepsi virgül ile ayrılarak aynı anda verilebilir. <br>
+Kullanım şekli aşağıdaki gibidir.
+<br> <br>
+element.classList.add("sinifAdı");<br>
+element.classList.add("sinifAdi1", "sinifAdi2", ... , "sinifAdiN");
+
+<h2>Javascript classList.toggle İle Elemente Sınıf Ekleyip Çıkarma</h2>
+Eğer bir sınıf element sınıf listesi içerisinde yoksa, o sınıfı eklemek ve eğer varsa o sınıfı element class listesinden çıkarmak isteyebiliriz. <br>
+Bu durumlarda toggle metodunu kullanıyoruz. <br>
+classListe.toggle eğer verilen sınıf elemente varsa onu çıkarır, eğer yoksa onu ekler. <br>
+Yukarıdaki örneği toggle ile tekrar yapalım.
+<br> <br>
+<code>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .yesil {
+        color: green;
+      }
+      .kirmizi {
+        color: red;
+      }
+    </style>
+    <script>
+      const sinifEkle1 = () => {
+        const baslikDOM = document.getElementById("baslik");
+        baslikDOM.classList.togle("yesil");
+      };
+    </script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="baslik">Bir başlık</h1>
+    <button onClick="sinifEkle1()">Rengi Değiştir</button>
+  </body>
+</html>
+</code>
+<br> <br>
+Yukarıdaki örneği çalıştırdığımızda, bir önceki örnek ile aynı çalışacaktır. <br>
+Tek farkı, butona her tıklandığında eğer yesil isimli class elemente yoksa ekleyecek ve eğer varsa çıkaracaktır. <br>
+Bu da başlık renginin her tıklamada değişmesine neden olacaktır.
+<br> <br>
+<h2>Javascript classList.replace İle Bir Elementin Sitil Sınıfını Değiştirme</h2>
+
+Biz bir elemente sınıf ekleyebildiğimiz gibi sitil sınıflarını da değiştirebiliriz. <br>
+Mesela yukarıdaki örneğimize bakarsa renk olarak yesil ve kirmizi sınıflarımız var. <br>
+Örneğimizi başlatırken başlığa kirmizi class bilgisini atayıp, sonra butona tıklandığına onu yesil class bilgisi ile değiştirmek istersek kodlarımız aşağıdaki gibi olacaktır.<br>
+<br><br>
+<code>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .yesil {
+        color: green;
+      }
+      .kirmizi {
+        color: red;
+      }
+    </style>
+    <script>
+      const sinifDegistir = () => {
+        const baslikDOM = document.getElementById("baslik");
+        baslikDOM.classList.replace("kirmizi", "yesil");
+      };
+    </script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="baslik" class="kirmizi">Bir başlık</h1>
+    <button onClick="sinifDegistir()">Rengi Değiştir</button>
+  </body>
+</html>
+</code>
+<br><br>
+element.classList.replace(“eskiSinif”, “yeniSinif”) şeklinde bir kullanıma sahiptir. <br>
+eskiSinif olarak verilen css sitil sınıfı, yeniSinif olarak verilen css class bilgisi ile değiştirilecektir.
+<br> <br>
+NOT : classList ile birlikte kullanılacak sınıf bilgilerinin daha önce hazırlanarak sayfaya eklenmesi gerekmektedir.<br>
+ Olmayan bir css sınıfı eğer bir elemente eklenirse hiç bir değişiklik olmayacaktır.
+ <br> <br>
+Sonuç<br>
+Eğer Html etiketlerinin sitil sınıflarını değiştirmek veya yenilerini eklemek istersek, add, replace ve toggle metodlarını kullanabiliriz.
+
+</body>
+</html>
